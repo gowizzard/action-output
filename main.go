@@ -18,7 +18,11 @@ func main() {
 		os.Exit(1)
 	}
 
-	_, err = file.WriteString("core_result=\"2\"\n")
+	key := "core_result"
+	value := 12
+
+	output := fmt.Sprintf("%s=\"%v\"\n", key, value)
+	_, err = file.WriteString(output)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
