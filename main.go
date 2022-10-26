@@ -12,13 +12,13 @@ import (
 func main() {
 
 	path := os.Getenv("GITHUB_OUTPUT")
-	file, err := os.OpenFile(path, os.O_APPEND|os.O_WRONLY, os.ModeAppend)
+	file, err := os.OpenFile(path, os.O_APPEND, os.ModeAppend)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
 
-	_, err = file.WriteString("CORE_RESULT=2")
+	_, err = file.WriteString("CORE_RESULT=\"2\"")
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
