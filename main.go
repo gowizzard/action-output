@@ -11,6 +11,23 @@ import (
 
 func main() {
 
-	fmt.Println(os.Getenv("GITHUB_OUTPUT"))
+	path := os.Getenv("GITHUB_OUTPUT")
+	file, err := os.Open(path)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	_, err = file.WriteString("\"core_result=2\"")
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	err = file.Close()
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 
 }
