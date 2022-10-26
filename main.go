@@ -18,7 +18,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	_, err = file.WriteString("\"core_result=2\"")
+	_, err = file.WriteString("CORE_RESULT=2")
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
